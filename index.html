@@ -149,6 +149,15 @@
         font-size: 14px;
       }
 
+      .nav-links a {
+        transition: color 0.2s ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a[aria-current="page"] {
+        color: var(--primary);
+      }
+
       .nav-actions {
         display: flex;
         gap: 10px;
@@ -1612,11 +1621,9 @@
             </span>
           </a>
           <div class="nav-links">
-            <a href="#opensource">开源优势</a>
-            <a href="#capability">产品能力</a>
-            <a href="#plans">付费版本</a>
+            <a href="index.html" aria-current="page">首页</a>
             <a href="cases.html">客户案例</a>
-            <a href="#scenes">防护场景</a>
+            <a href="https://help.waf-ce.chaitin.cn/" target="_blank" rel="noreferrer">帮助文档</a>
           </div>
           <div class="nav-actions">
             <a class="btn ghost" href="https://github.com/chaitin/SafeLine" target="_blank" rel="noreferrer">
