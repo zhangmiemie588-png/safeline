@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>客户案例 - 雷池 SafeLine</title>
+    <meta name="description" content="雷池 SafeLine 客户案例。" />
+    <style>
+      :root {
+        --primary: #5bc3c1;
+        --ink: #f6fbfa;
+        --muted: #9eb7b4;
+        --line: rgba(198, 255, 250, 0.12);
+        --radius: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: #020706;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: -30%;
+        z-index: -2;
+        background:
+          radial-gradient(circle at 18% 22%, rgba(0, 255, 220, 0.2), transparent 25%),
+          radial-gradient(circle at 78% 12%, rgba(42, 116, 255, 0.18), transparent 24%),
+          conic-gradient(from 210deg at 50% 40%, #020706, #06221f, #020706, #071a27, #020706);
+        animation: atmosphere 18s ease-in-out infinite alternate;
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(rgba(91, 195, 193, 0.045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(91, 195, 193, 0.045) 1px, transparent 1px);
+        background-size: 52px 52px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page-shell {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+
+      .container {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        border-bottom: 1px solid var(--line);
+        background: rgba(4, 16, 15, 0.76);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav {
+        display: flex;
+        min-height: 72px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .brand {
+        display: flex;
+        min-width: max-content;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand img {
+        width: 34px;
+        height: 36px;
+      }
+
+      .brand-name {
+        display: grid;
+        gap: 2px;
+      }
+
+      .brand-name strong {
+        font-size: 16px;
+      }
+
+      .brand-name span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        color: #c6dad7;
+        font-size: 14px;
+      }
+
+      .nav-links a {
+        transition: color 0.2s ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--primary);
+      }
+
+      .nav-actions {
+        display: flex;
+        gap: 10px;
+      }
+
+      .btn {
+        display: inline-flex;
+        min-height: 42px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 16px;
+        border: 1px solid rgba(91, 195, 193, 0.24);
+        border-radius: var(--radius);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .btn.primary {
+        color: #03110f;
+        background: var(--primary);
+      }
+
+      .empty-page {
+        flex: 1;
+        min-height: calc(100vh - 145px);
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .footer {
+        padding: 24px 0;
+        border-top: 1px solid var(--line);
+        color: #8ba5a1;
+        background: rgba(2, 7, 6, 0.72);
+        font-size: 13px;
+      }
+
+      @keyframes atmosphere {
+        from {
+          transform: translate3d(-2%, -1%, 0) rotate(-2deg) scale(1);
+        }
+        to {
+          transform: translate3d(3%, 2%, 0) rotate(3deg) scale(1.08);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .nav-links {
+          display: none;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .brand-name span,
+        .nav-actions .github {
+          display: none;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        body::before {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <nav class="nav container" aria-label="主导航">
+          <a class="brand" href="index.html">
+            <img src="https://waf-ce.chaitin.cn/images/safeline.svg" alt="SafeLine Logo" />
+            <span class="brand-name">
+              <strong>雷池 SafeLine</strong>
+              <span>开源 Web 应用防火墙</span>
+            </span>
+          </a>
+          <div class="nav-links">
+            <a href="index.html#opensource">开源优势</a>
+            <a href="index.html#capability">产品能力</a>
+            <a href="index.html#plans">付费版本</a>
+            <a class="active" href="cases.html" aria-current="page">客户案例</a>
+            <a href="index.html#scenes">防护场景</a>
+          </div>
+          <div class="nav-actions">
+            <a class="btn github" href="https://github.com/chaitin/SafeLine" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn primary" href="index.html#trial">免费体验</a>
+          </div>
+        </nav>
+      </header>
+
+      <main class="empty-page">
+        <h1 class="visually-hidden">客户案例</h1>
+      </main>
+
+      <footer class="footer">
+        <div class="container">雷池 SafeLine 客户案例</div>
+      </footer>
+    </div>
+  </body>
+</html>
