@@ -202,6 +202,132 @@
           animation: none;
         }
       }
+
+      :root {
+        --primary: #68d8cb;
+        --ink: #f1f7f5;
+        --muted: #8ea39f;
+        --line: rgba(195, 228, 222, 0.12);
+        --radius: 12px;
+      }
+
+      body {
+        background: #050807;
+        font-family:
+          "Avenir Next", "SF Pro Display", "PingFang SC", "Microsoft YaHei",
+          ui-sans-serif, system-ui, sans-serif;
+        font-feature-settings: "kern" 1, "ss01" 1;
+      }
+
+      body::before {
+        inset: -18%;
+        background:
+          radial-gradient(circle at 12% 12%, rgba(104, 216, 203, 0.12), transparent 24%),
+          radial-gradient(circle at 88% 32%, rgba(104, 216, 203, 0.07), transparent 22%),
+          #050807;
+        animation: none;
+      }
+
+      body::after {
+        background:
+          linear-gradient(rgba(104, 216, 203, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(104, 216, 203, 0.03) 1px, transparent 1px);
+        background-size: 72px 72px;
+        opacity: 0.34;
+      }
+
+      .container {
+        width: min(1240px, calc(100% - 64px));
+      }
+
+      .topbar {
+        border-color: rgba(195, 228, 222, 0.1);
+        background: rgba(5, 8, 7, 0.84);
+        backdrop-filter: blur(20px) saturate(130%);
+      }
+
+      .nav {
+        min-height: 76px;
+      }
+
+      .brand img {
+        width: 38px;
+        height: 40px;
+      }
+
+      .brand-name strong {
+        letter-spacing: -0.02em;
+      }
+
+      .nav-links {
+        gap: 30px;
+        color: #b7c8c4;
+        font-weight: 600;
+      }
+
+      .nav-links a {
+        position: relative;
+        padding: 27px 0 24px;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 18px;
+        left: 0;
+        height: 1px;
+        background: var(--primary);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 180ms ease;
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      .btn {
+        min-height: 44px;
+        padding: 0 18px;
+        border-radius: 9px;
+        white-space: nowrap;
+        transition:
+          transform 160ms ease,
+          border-color 160ms ease,
+          background 160ms ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn:active {
+        transform: translateY(0) scale(0.98);
+      }
+
+      .btn:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 3px;
+      }
+
+      .empty-page {
+        min-height: calc(100dvh - 148px);
+      }
+
+      .footer {
+        color: #667b76;
+        border-color: var(--line);
+        background: #040706;
+      }
+
+      @media (max-width: 720px) {
+        .container {
+          width: min(100% - 28px, 1240px);
+        }
+      }
     </style>
   </head>
   <body>
